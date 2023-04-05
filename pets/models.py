@@ -12,7 +12,7 @@ class Pet(models.Model):
     age = models.IntegerField()
     weight = models.FloatField()
     sex = models.CharField(
-        max_length=20, default="Not Informed", choices=SexPet.choices
+        max_length=20, default=SexPet.NOT_INFORMED, choices=SexPet.choices
     )
 
     group = models.ForeignKey(
