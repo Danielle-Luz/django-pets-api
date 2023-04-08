@@ -5,9 +5,5 @@ from .models import Trait
 
 class TraitsSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
-    trait_name = serializers.CharField(
-        max_length=20,
-        source="name",
-        validators=[UniqueValidator(queryset=Trait.objects.all())],
-    )
+    trait_name = serializers.CharField(max_length=20, source="name")
     created_at = serializers.DateTimeField(read_only=True)
